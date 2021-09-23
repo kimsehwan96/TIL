@@ -51,10 +51,11 @@ public:
 
     int size() { return length; }
 
-    ~Vector(){
+    ~Vector(){ //소멸자 구현
         if (data)
         {
-            delete[] data;
+            delete[] data; //동적 할당된 메모리 공간 제거 (heap 영역)
+            // cpp의 경우 따로 garbage collector가 없으므로, 사용자가 동적 할당한 공간을 직접 제거해 주어야 함
         }
     }
 };
