@@ -45,9 +45,12 @@
         - [ ] 파드 <-> 외부
     - [ ] 스케쥴러 원리와 스케쥴링 평가 방법
     - [ ] Node에 memory pressure 발생시 어떤 현상이 발생하며, 어떻게 대응할지 
-    - [ ] QoS 클래스
+    - [ ] QoS 클래스 (Resource Quotas)
         - [ ] 각 클래스의 의미
         - [ ] Request, Limit 의미
     - [ ] 스케쥴링, 축출, 선점
     - [ ] CrashBackOff
     - [ ] kube-proxy
+
+- [ ] ArgoCD
+    - [ ] App of Apps
