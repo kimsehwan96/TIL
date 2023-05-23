@@ -123,5 +123,5 @@ sequenceDiagram
     Server ->> Client: 전달받은 데이터를 공개키 기반 복호화 후 해당 값의 해쉬를 클라이언트에 전달
     Client ->> Server: 저장된 해쉬 값과 전달받은 해쉬 값을 비교하여 서버 인증
     Note over Client,Server: 클라이언트는 호스트의 공개키를 known_hosts 에서 찾거나, 신뢰할지 여부 확인
-    Note over Client,Server: 더 작성 예정. 클라이언트/서버간 공개키 교환 및 세션키 생성, 세션키를 통한 대칭키 생성 
+    Note over Client,Server: 더 작성 예정. 클라이언트/서버간 공개키 교환 및 디피헬만 알고리즘을 통한 세션키/대칭키 생성 과정 확인, 유저 인증 부분 더 확인
 ```
