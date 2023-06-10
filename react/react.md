@@ -38,3 +38,32 @@ export default ExpenseItem;
 ```
 
 여기서 Card 컴포넌트로 다른 컴포넌트 및 html 태그를 감쌌는데. Card 컴포넌트의 내부 요소들을 props.children 으로 전달 받을 수 있는 것.
+
+## JSX 
+
+```jsx
+
+return (
+    <div>
+        <h2> Hello ! </h2>
+        <Expenses items={expenses} />
+    </div>
+)
+```
+
+는 사실
+
+```jsx
+
+return React.createElement(
+    'div',
+    {},
+    React.createElement('h2', {}, "Hello !"),
+    React.createElement(Expenses, {items: expenses})
+);
+```
+
+와 동일하다.
+
+(나중에 시간 내서 다시 알아보기)
+
