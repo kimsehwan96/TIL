@@ -133,9 +133,9 @@ div {
 }
 ```
 
-### 색상
+## 색상
 
-#### color (글자 색상)
+### color (글자 색상)
 
 요소 내용의 글자 색상을 지정합니다.
 
@@ -145,7 +145,7 @@ div {
 }
 ```
 
-#### background (요소 색상)
+### background (요소 색상)
 
 요소의 배경 색상을 지정합니다.
 
@@ -153,5 +153,224 @@ div {
 div {
     background-color: red;
     /* background <- 단축속성 */
+}
+```
+
+## 복합선택자
+
+### 일치 선택자
+
+```css
+
+span.orange {
+    color: red;
+}
+```
+
+```html
+<span class="orange"> orange </span>
+```
+
+### 자식 선택자
+
+```css
+
+ul > .orange {
+    color: red;
+}
+```
+
+```html
+<ul>
+    <li> hi </li>
+    <li class="orange"> orange </li> <!-- 선택 -->
+</ul>
+```
+
+ul 의 자식이면서 orange 클래스를 선택
+
+### 후손 선택자
+
+```css
+
+div .orange {
+    color: red;
+}
+```
+
+```html
+
+<div>
+    <ul>
+        <li class="orange"> orange </li>  <!-- 선택 -->
+    </ul>
+    <span class="orange"> orange </span>  <!-- 선택 -->
+</div>
+```
+
+### 인접 형제 선택자
+
+```css
+.orange + li {
+    color: red;
+}
+```
+
+```html
+ </ul>
+    <li></li>
+    <li class="orange"></li>
+    <li></li>  <!-- 선택 -->
+</ul>
+```
+
+### 일반 형제 선택자
+
+```css
+.orange ~ li {
+    color: red;
+}
+```
+
+```html
+ </ul>
+    <li></li>
+    <li class="orange"></li>
+    <li></li>  <!-- 선택 -->
+    <li></li>  <!-- 선택 -->
+    <li></li>  <!-- 선택 -->
+</ul>
+```
+
+## 가상 클래스 선택자  (Pseudo classes selector)
+
+### Hover 
+
+`E:hover`
+
+E 에 마우스 포인터가 올라가 있는 동안에만 선택 
+
+```css
+a:hover {
+  font-weight: bold;
+  font-size: 20px;
+}
+```
+
+위 예제는 a 태그를 사용하는 요소에 마우스를 올리는 경우 반영이 됨
+
+### Active
+
+`E:active`
+
+E 요소를 마우스로 클릭하는 동안에만 E를 선택
+
+```css
+.box:active {
+  width: 200px;
+  background: yellowgreen;
+}
+```
+
+### Focus
+
+`E:focus`
+
+E 요소가 포커스 된 동안에만 E 선택
+
+대화형 콘텐츠에서 사용 가능
+
+```html
+<input type="text">
+```
+
+```css
+input {
+  width: 100px;
+  outline: none;
+  boder: 1px solid lightgrey;
+  padding: 5px 10px;
+  transition: 0.4s;
+}
+
+input:focus{
+  border-color: red;
+  width: 200px;
+}
+```
+
+위와 같이 하면 input 태그 요소 안에서 무언가 작업 할 때를 focus 상태로 인식하기 떄문에, 테두리 선이 빨간색으로 변하면서 너비도 변화한다.
+
+
+## First Child
+
+`E:first-child`
+
+E 가 형제 요소 중 첫번째 요소라면 선택
+
+```css
+.fruits li:first-child {
+    color: red;
+}
+```
+
+```html
+<ul class="fruits">
+    <li>a</li> <!-- 선택 -->
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+```
+
+## Last Child
+
+`E:last-child`
+
+E 가 형제 요소 중 마지막 요소라면 선택
+
+```css
+.fruits li:last-child {
+    color: red;
+}
+```
+
+```html
+<ul class="fruits">
+    <li>a</li> 
+    <li>b</li>
+    <li>c</li>
+    <li>d</li> <!-- 선택 -->
+</ul>
+```
+
+## Nth Child
+
+`E:nth-child(n)`
+
+E 가 형제 요소 중 n 번째 요소라면 선택
+
+## Nth of Type
+
+`E:nth-of-type(n)`
+
+E 의 타입(태그이름)과 동일한 타입인 형제 요소 중 E 가 n번째 요소라면 선택
+
+```html
+<div class="fruits">
+  <div>딸기</div>
+  <p>사과</p>
+  <p>망고</p>
+  <span>오렌지</span>
+</div>
+```
+
+```css
+.fruits {
+  font-size: 20px;
+}
+
+.fruits p:nth-of-type(1) {
+  color: red;
 }
 ```
