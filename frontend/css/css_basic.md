@@ -374,3 +374,37 @@ E 의 타입(태그이름)과 동일한 타입인 형제 요소 중 E 가 n번�
   color: red;
 }
 ```
+
+## 가상 요소 선택자 
+
+### Before
+
+`E::before`
+
+E 요소 내부의 앞에, 내용을 삽입
+
+```html
+<ul>
+  <li>1</li>
+  <li>1</li>
+  <li>1</li>
+  <li>1</li>
+  <li>1</li>
+</ul>
+```
+
+```css
+ul li::before {
+  content: "숫자";
+  font-weight: bold;
+}
+```
+
+li 태그내의 1 내용 앞에 숫자란느 텍스트가 붙고, bold 처리가 된다.
+
+### After
+
+`E::after`
+
+E 요소 내부의 뒤에 내용을 삽입
+
