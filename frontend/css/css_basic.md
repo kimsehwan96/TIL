@@ -408,3 +408,63 @@ li 태그내의 1 내용 앞에 숫자란느 텍스트가 붙고, bold 처리가
 
 E 요소 내부의 뒤에 내용을 삽입
 
+## 상속 (Inheritance)
+
+```css
+.ecosystem {
+    color: red;
+}
+```
+
+```html
+<div class="ecosystem">생태계 <!--RED-->
+    <div class="aniaml">동물 <!--RED-->
+        <div class="tiger">호랑이</div> <!--RED--> 
+        <div class="lion">사자</div> <!--RED--> 
+    </div>
+    <div class="plant">식물</div> <!--RED--> 
+</div>
+```
+
+생태계(.ecosystem)에 적용된 색상이 하위 요소들에게도 적용됨
+
+### 상속 되는 속성들
+
+- font
+    - font-size
+    - font-weight
+    - font-style
+    - line-height
+    - font-family
+- color
+- text-align
+- text-indent
+- text-decoration
+- letter-spacing
+- opacity
+
+etc..
+
+### 강제 상속
+
+```html
+<div class="parent">
+    <div class="child"></div>
+</div>
+```
+
+```css
+.parent {
+    position: absolute;
+}
+
+.child {
+    position: inherit;
+}
+```
+
+inherit 값을 사용해서 부모 요소에 적용된 css 속성:값을 상속받을 수 있다.
+
+
+
+
