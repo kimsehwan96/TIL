@@ -46,3 +46,7 @@ ref : https://aws.amazon.com/ko/blogs/database/choosing-the-right-dynamodb-parti
 
 ref : https://zuminternet.github.io/DynamoDB/
 
+
+## DynamoDB 데이터 모델링 / 테스트
+
+https://amazon-dynamodb-labs.com/game-player-data/plan-model/step1.html
