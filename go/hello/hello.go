@@ -1,8 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
-func main() {
-	fmt.Println("Hello, world!")
+func add(x int, y int) int {
+	return x + y
 }
 
+func main() {
+	fmt.Println("Hello", rand.Intn(10))
+	fmt.Println(add(42, 13))
+}

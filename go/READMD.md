@@ -37,3 +37,38 @@ func main() {
 `$ go mod tidy` 를 진행하면 종속성 관리 및 모듈 다운로드를 진행함. 이후
 
 `$ go run .` 하면 코드 정상적으로 수행 됨
+
+### Export 되는 이름.
+
+Go 에서는 대문자로 시작하는 이름이 export 됩니다. 
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	fmt.Println(math.pi)
+}
+```
+
+위와 같이 `math.pi` 를 참조하려고 하면 에러가 발생합니다.
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	fmt.Println(math.Pi)
+}
+```
+
+위와 같이 하면 정상적으로 출력됩니다. `export` 되지 않은 이름들에는 패키지 밖에서 접근 할 수 없습니다.
+
